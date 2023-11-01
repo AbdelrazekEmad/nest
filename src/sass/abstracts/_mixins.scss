@@ -1,5 +1,0 @@
-@mixin responsive($type, $size) {
-  @media (#{$type}-width: $size) {
-    @content;
-  }
-}
