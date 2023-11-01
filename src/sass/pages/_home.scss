@@ -1,0 +1,144 @@
+.hero {
+  position: relative;
+
+  .owl-carousel--hero {
+    .owl-dots {
+      position: absolute;
+      bottom: 2%;
+      #{$s}: 50%;
+      transform: translateX($n * 50%);
+
+      .owl-dot {
+        span {
+          width: 15px;
+          height: 15px;
+          background: #fff;
+          transition: background 0.3s ease-in-out;
+        }
+
+        &.active {
+          span {
+            background-color: #ae9c94;
+          }
+        }
+      }
+    }
+  }
+
+  &__slide {
+    height: 450px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: #{$e} center;
+
+    @include responsive(max, 768px) {
+      background-position: center;
+    }
+
+    &__item {
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      &__content {
+        width: 40%;
+        margin-#{$e}: 3rem;
+
+        @include responsive(max, 425px) {
+          width: 100%;
+          margin: 0;
+        }
+
+        &__headding {
+          font-size: 4rem;
+          text-transform: uppercase;
+          font-family: "Cigra - FREE DEMO";
+          font-weight: normal;
+
+          @include responsive(max, 768px) {
+            font-size: 2.25rem;
+          }
+        }
+
+        &__pragraph {
+          font-weight: 200;
+        }
+
+        &__btn {
+          border-radius: $mainRadius;
+          border: 0.5px solid #000;
+          padding: 0;
+
+          a {
+            display: block;
+            font-size: 14px;
+            padding: 0.25rem 1.75rem;
+            color: #000;
+          }
+
+          &:hover {
+            border: 0.5px solid #000;
+          }
+        }
+      }
+    }
+  }
+
+  &__side__img {
+    position: relative;
+
+    &__content {
+      position: absolute;
+      max-width: 150px;
+
+      &.hero__side__img__content--one {
+        top: 12%;
+        left: 5%;
+      }
+
+      &.hero__side__img__content--two {
+        bottom: 10%;
+        right: 5%;
+      }
+
+      h5 {
+        font-family: "Cigra - FREE DEMO";
+        font-weight: bold;
+        font-size: 24px;
+        border-bottom: 2px solid #000;
+      }
+
+      p {
+        font-weight: 200;
+      }
+    }
+  }
+}
+
+.categories {
+  &__card {
+    background-color: $mainColor;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 1rem;
+    border-radius: 10rem;
+    min-height: 250px;
+    color: #000;
+
+    h6 {
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    img {
+      object-fit: contain;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

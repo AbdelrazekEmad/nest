@@ -1,0 +1,6 @@
+mixin sectionHeader(title, btnLink) 
+    .section__header
+        h2.section__header__headding #{title} 
+        if btnLink
+            button.btn.section__header__btn: a(href= btnLink) View All
+

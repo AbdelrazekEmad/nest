@@ -1,0 +1,32 @@
+
+//- Cart Side Menu 
+
+div(class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel")
+    div(class="offcanvas-header")
+        button(type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close")
+
+    div(class="offcanvas-body")
+        .cart__headder    
+            h4.text-center Your Cart 
+            p.text-center Buy more than 72,000 Kwd and get free shipping #[br] ( only for kuwait customers )
+            div(class="progress cart-progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100")
+                div(class="progress-bar progress-bar-striped progress-bar-animated" style="width:55%")
+        .cart__product__wrapper 
+            - for(var i=0; i < 7 ; i++)
+                .cart__product__wrapper__item 
+                    .cart__product__wrapper__item__img: img(src="./images/products/img-1.webp" alt="")
+                    .cart__product__wrapper__item__content
+                        h6.cart__product__wrapper__item__content__title Product Name 
+                        span.cart__product__wrapper__item__content__price 12.000 KWD
+                        .cart__product__wrapper__item__content__counter 
+                            button.cart__product__wrapper__item__content__counter__btn -
+                            span.cart__product__wrapper__item__content__counter__number 2
+                            button.cart__product__wrapper__item__content__counter__btn +
+                        button.cart__product__wrapper__item__content__remove Remove
+        .cart__footer
+            .cart__total 
+                .cart__total__title Subtotal 
+                .cart__total__price 24.000 KWD 
+            .cart__action 
+                button.cart__action__view-cart: a(href="") View Cart 
+                button.cart__action__checkout: a(href="") Checkout 

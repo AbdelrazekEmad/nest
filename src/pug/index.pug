@@ -1,0 +1,75 @@
+include ./abstracts/_variables
+include ./abstracts/_mixins
+include ./components/_sectionHeader
+doctype html
+html(lang="en", dir = "ltr")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title #{projectName}
+        +mainStyle('ltr', [
+            "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css",
+            "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        ])
+    body 
+        //- Start NavBar
+        include ./layout/_navbar.pug 
+        //- End NavBar
+
+        //- Start NavBar
+        include ./layout/_header.pug 
+        //- End NavBar
+
+        //- Start Shop By Category 
+        section.py-5.categories 
+            .container 
+                +sectionHeader("Shop By Categpry" , "http://google.com")
+                .owl-carousel.owl-theme.owl-carousel--categories.owl-nav-center.py-4
+                    each category in mainNavgation
+                        if category.img 
+                            item
+                                a(href="#").categories__card
+                                    h6 #{category.name}
+                                    img(src= category.img)
+        //- End Shop By Category 
+
+        each category in mainNavgation
+            if category.img 
+                section.py-4.products 
+                    .container
+                        +sectionHeader( category.name , "http://google.com")
+                        .owl-carousel.owl-theme.owl-carousel--products.owl-nav-center.py-4
+                            - for(var i = 0; i <= 5; i++) 
+                                .item 
+                                    .product_card(class= i % 2 == 0 ? "new" : "onSale")
+                                        a(href="./single.html" class="product_card__img")
+                                            img(src="./images/products/img-1.webp" alt="product name")
+                                            if (i % 2 == 0)
+                                                span(class="product_card__img__new"): span new
+                                            else
+                                                span(class="product_card__img__sale"): span 15% off
+                                        .product_card__content
+                                            .product_card__content__product.mb-2
+                                                h5.product_card__content__product__title Name Product Name Product Name 
+                                                span.product_card__content__product__love <i class="fa-regular fa-heart"></i>
+                                            .product_card__content__cartPrice.mb-2
+                                                button.btn.product_card__content__cartPrice__addToCart: a(href="./cart.html") add to cart 
+                                                span.product_card__content__cartPrice__price 12 kwd #[span.old-price 30 kwd]
+                                            .product_card__content__actions 
+                                                span Select option
+                                                ul 
+                                                    li(class="product_card__content__actions__color" style="background-color: #585858") 
+                                                    li(class="product_card__content__actions__color" style="background-color: #EECF60") 
+                                                    li(class="product_card__content__actions__color" style="background-color: #74A7D6") 
+
+
+
+        //- Start footer
+        include ./layout/_footer.pug 
+        //- End footer
+
+        //- Start Scripts 
+        +mainScript([
+            "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
+            "./js/owl-init.js",
+        ])
