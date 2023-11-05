@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="css/main-ltr.css"/>
+  </head>
+  <body> <div class="modal fade" id="addReview" tabindex="-1" aria-labelledby="addReviewLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h1 class="modal-title fs-5" id="addReviewLabel">Write Review</h1>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+<form class="puplic__modal__form" action="{{$formAction}}" method="POST">
+<div class="mb-3">
+<input type="text" class="form-control" name="name" placeholder="Name" required>
+</div>
+<div class="mb-3">
+<input type="email" class="form-control" name="email" placeholder="E-mail" required>
+</div>
+<div class="mb-3 puplic__modal__form__rate">
+<h5 class="fw-normal m-0">Rate</h5>
+<div class="puplic__modal__form__rate__stars">
+<input type="radio" name="rate" id="star-1" value="1" hidden />
+<input type="radio" name="rate" id="star-2" value="2" hidden />
+<input type="radio" name="rate" id="star-3" value="3" hidden />
+<input type="radio" name="rate" id="star-4" value="4" checked hidden />
+<input type="radio" name="rate" id="star-5" value="5" hidden />
+<section>
+<label for="star-1">
+<svg width="20" height="20" viewBox="0 0 51 48">
+<path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+</svg>
+</label>
+<label for="star-2">
+<svg width="20" height="20" viewBox="0 0 51 48">
+<path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+</svg>
+</label>
+<label for="star-3">
+<svg width="20" height="20" viewBox="0 0 51 48">
+<path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+</svg>
+</label>
+<label for="star-4">
+<svg width="20" height="20" viewBox="0 0 51 48">
+<path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+</svg>
+</label>
+<label for="star-5">
+<svg width="20" height="20" viewBox="0 0 51 48">
+<path d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+</svg>
+</label>
+</section>
+</div>
+</div>
+<div class="mb-3">
+<input type="text" class="form-control" name="Title" placeholder="Title" required>
+</div>
+<div class="mb-3">
+<textarea class="form-control" name="body" rows="5" placeholder="Body"></textarea>
+</div>
+<div class="mb-3">
+<input type="text" class="form-control" name="Country" placeholder="Country" required>
+</div>
+<button class="btn puplic__modal__form__submit">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="cart__headder">   
+          <h4 class="text-center">Your Cart </h4>
+          <p class="text-center">Buy more than 72,000 Kwd and get free shipping <br> ( only for kuwait customers )</p>
+          <div class="progress cart-progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:55%"></div>
+          </div>
+        </div>
+        <div class="cart__product__wrapper"> 
+          <div class="cart__product__wrapper__item"> 
+            <div class="cart__product__wrapper__item__img"><img src="./images/products/img-1.webp" alt=""></div>
+            <div class="cart__product__wrapper__item__content">
+              <h6 class="cart__product__wrapper__item__content__title">Product Name </h6><span class="cart__product__wrapper__item__content__price">12.000 KWD</span>
+              <div class="cart__product__wrapper__item__content__counter"> 
+                <button class="cart__product__wrapper__item__content__counter__btn">-</button><span class="cart__product__wrapper__item__content__counter__number">2</span>
+                <button class="cart__product__wrapper__item__content__counter__btn">+</button>
+              </div>
+              <button class="cart__product__wrapper__item__content__remove">Remove</button>
+            </div>
+          </div>
+          <div class="cart__product__wrapper__item"> 
+            <div class="cart__product__wrapper__item__img"><img src="./images/products/img-1.webp" alt=""></div>
+            <div class="cart__product__wrapper__item__content">
+              <h6 class="cart__product__wrapper__item__content__title">Product Name </h6><span class="cart__product__wrapper__item__content__price">12.000 KWD</span>
+              <div class="cart__product__wrapper__item__content__counter"> 
+                <button class="cart__product__wrapper__item__content__counter__btn">-</button><span class="cart__product__wrapper__item__content__counter__number">2</span>
+                <button class="cart__product__wrapper__item__content__counter__btn">+</button>
+              </div>
+              <button class="cart__product__wrapper__item__content__remove">Remove</button>
+            </div>
+          </div>
+          <div class="cart__product__wrapper__item"> 
+            <div class="cart__product__wrapper__item__img"><img src="./images/products/img-1.webp" alt=""></div>
+            <div class="cart__product__wrapper__item__content">
+              <h6 class="cart__product__wrapper__item__content__title">Product Name </h6><span class="cart__product__wrapper__item__content__price">12.000 KWD</span>
+              <div class="cart__product__wrapper__item__content__counter"> 
+                <button class="cart__product__wrapper__item__content__counter__btn">-</button><span class="cart__product__wrapper__item__content__counter__number">2</span>
+                <button class="cart__product__wrapper__item__content__counter__btn">+</button>
+              </div>
+              <button class="cart__product__wrapper__item__content__remove">Remove</button>
+            </div>
+          </div>
+          <div class="cart__product__wrapper__item"> 
+            <div class="cart__product__wrapper__item__img"><img src="./images/products/img-1.webp" alt=""></div>
+            <div class="cart__product__wrapper__item__content">
+              <h6 class="cart__product__wrapper__item__content__title">Product Name </h6><span class="cart__product__wrapper__item__content__price">12.000 KWD</span>
+              <div class="cart__product__wrapper__item__content__counter"> 
+                <button class="cart__product__wrapper__item__content__counter__btn">-</button><span class="cart__product__wrapper__item__content__counter__number">2</span>
+                <button class="cart__product__wrapper__item__content__counter__btn">+</button>
+              </div>
+              <button class="cart__product__wrapper__item__content__remove">Remove</button>
+            </div>
+          </div>
+          <div class="cart__product__wrapper__item"> 
+            <div class="cart__product__wrapper__item__img"><img src="./images/products/img-1.webp" alt=""></div>
+            <div class="cart__product__wrapper__item__content">
+              <h6 class="cart__product__wrapper__item__content__title">Product Name </h6><span class="cart__product__wrapper__item__content__price">12.000 KWD</span>
+              <div class="cart__product__wrapper__item__content__counter"> 
+                <button class="cart__product__wrapper__item__content__counter__btn">-</button><span class="cart__product__wrapper__item__content__counter__number">2</span>
+                <button class="cart__product__wrapper__item__content__counter__btn">+</button>
+              </div>
+              <button class="cart__product__wrapper__item__content__remove">Remove</button>
+            </div>
+          </div>
+          <div class="cart__product__wrapper__item"> 
+            <div class="cart__product__wrapper__item__img"><img src="./images/products/img-1.webp" alt=""></div>
+            <div class="cart__product__wrapper__item__content">
+              <h6 class="cart__product__wrapper__item__content__title">Product Name </h6><span class="cart__product__wrapper__item__content__price">12.000 KWD</span>
+              <div class="cart__product__wrapper__item__content__counter"> 
+                <button class="cart__product__wrapper__item__content__counter__btn">-</button><span class="cart__product__wrapper__item__content__counter__number">2</span>
+                <button class="cart__product__wrapper__item__content__counter__btn">+</button>
+              </div>
+              <button class="cart__product__wrapper__item__content__remove">Remove</button>
+            </div>
+          </div>
+          <div class="cart__product__wrapper__item"> 
+            <div class="cart__product__wrapper__item__img"><img src="./images/products/img-1.webp" alt=""></div>
+            <div class="cart__product__wrapper__item__content">
+              <h6 class="cart__product__wrapper__item__content__title">Product Name </h6><span class="cart__product__wrapper__item__content__price">12.000 KWD</span>
+              <div class="cart__product__wrapper__item__content__counter"> 
+                <button class="cart__product__wrapper__item__content__counter__btn">-</button><span class="cart__product__wrapper__item__content__counter__number">2</span>
+                <button class="cart__product__wrapper__item__content__counter__btn">+</button>
+              </div>
+              <button class="cart__product__wrapper__item__content__remove">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="cart__footer">
+          <div class="cart__total"> 
+            <div class="cart__total__title">Subtotal </div>
+            <div class="cart__total__price">24.000 KWD </div>
+          </div>
+          <div class="cart__action"> 
+            <button class="cart__action__view-cart"><a href="cart.html">View Cart </a></button>
+            <button class="cart__action__checkout"><a href="information.html">Checkout </a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="upperbar">
+      <div class="container">
+        <p>Free Delivery For Orders Over 60 KD <br><a href="#" target="_blank">Download our App</a></p>
+      </div>
+    </div>
+    <div class="contain-navbar">
+      <div class="navbar">
+        <div class="container">
+          <div class="navbar__logo"><a href="./index.html"><img src="./images/logo.webp" alt="Logo" title="Logo"></a></div>
+          <div class="navbar__search"> 
+            <div class="navbar__search__input">
+              <input class="form-control" type="text" placeholder="Search For Products...">
+              <div class="navbar__search__input__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" fill="none"><path d="M10.5 20.876C15.7467 20.876 20 16.4273 20 10.9395C20 5.45167 15.7467 1.00293 10.5 1.00293C5.25329 1.00293 1 5.45167 1 10.9395C1 16.4273 5.25329 20.876 10.5 20.876Z" stroke="#CACACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 19.8301L19 17.8356" stroke="#CACACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+            <ul class="navbar__search__list">
+              <li class="navbar__search__list__item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 24 26" fill="none"><path d="M12 13.291C14.7614 13.291 17 10.9895 17 8.1505C17 5.31149 14.7614 3.01001 12 3.01001C9.23858 3.01001 7 5.31149 7 8.1505C7 10.9895 9.23858 13.291 12 13.291Z" stroke="#292D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5899 23.5719C20.5899 19.5932 16.7399 16.3752 11.9999 16.3752C7.25991 16.3752 3.40991 19.5932 3.40991 23.5719" stroke="#292D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+              <li class="navbar__search__list__item"><a href="./whishlist.html">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23" fill="none"><path d="M0 7.4432C0 12.6912 4.19331 17.8529 10.8063 22.2878C11.0647 22.448 11.4171 22.6204 11.6638 22.6204C11.9104 22.6204 12.2628 22.448 12.5095 22.2878C19.1341 17.8529 23.3275 12.6912 23.3275 7.4432C23.3275 3.08225 20.4732 0.00244141 16.6675 0.00244141C14.4828 0.00244141 12.7209 1.08653 11.6638 2.74959C10.6066 1.09883 8.83295 0.00244141 6.65997 0.00244141C2.85431 0.00244141 0 3.08225 0 7.4432ZM1.89113 7.4432C1.89113 4.16634 3.91141 1.98581 6.63646 1.98581C8.84473 1.98581 10.1015 3.42716 10.865 4.65911C11.1821 5.15187 11.3818 5.28738 11.6638 5.28738C11.9457 5.28738 12.1219 5.13952 12.4625 4.65911C13.2612 3.45181 14.4945 1.98581 16.691 1.98581C19.416 1.98581 21.4364 4.16634 21.4364 7.4432C21.4364 12.026 16.8202 16.9659 11.8986 20.3907C11.7812 20.4769 11.7107 20.5385 11.6638 20.5385C11.6167 20.5385 11.5346 20.4769 11.4171 20.3907C6.50726 16.9659 1.89113 12.026 1.89113 7.4432Z" fill="#292D32"/></svg><span class="navbar__search__list__item__number">10</span></a></li>
+              <li class="navbar__search__list__item" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="24" viewBox="0 0 27 24" fill="none"><path d="M9.51087 17.3875H23.1631C23.6192 17.3875 24.0169 17.0132 24.0169 16.5101C24.0169 16.0071 23.6192 15.6327 23.1631 15.6327H9.70972C9.04293 15.6327 8.63349 15.1648 8.52817 14.4512L8.34099 13.2228H23.1863C24.8943 13.2228 25.7717 12.17 26.0175 10.4971L26.9533 4.30859C26.9768 4.15655 27 3.96933 27 3.86406C27 3.30253 26.5788 2.9165 25.9355 2.9165H6.83191L6.60964 1.43078C6.49265 0.52999 6.16511 0.0737305 4.97183 0.0737305H0.865699C0.397761 0.0737305 0 0.483221 0 0.95116C0 1.43078 0.397761 1.84022 0.865699 1.84022H4.81975L6.6915 14.6852C6.93718 16.3463 7.81456 17.3875 9.51087 17.3875ZM25.0112 4.68294L24.1808 10.2865C24.0872 11.0118 23.7012 11.4564 23.0109 11.4564L8.08364 11.4681L7.08926 4.68294H25.0112ZM10.435 23.073C11.4879 23.073 12.3302 22.2424 12.3302 21.1778C12.3302 20.1249 11.4879 19.2826 10.435 19.2826C9.37046 19.2826 8.52817 20.1249 8.52817 21.1778C8.52817 22.2424 9.37046 23.073 10.435 23.073ZM21.3731 23.073C22.4376 23.073 23.28 22.2424 23.28 21.1778C23.28 20.1249 22.4376 19.2826 21.3731 19.2826C20.3202 19.2826 19.4663 20.1249 19.4663 21.1778C19.4663 22.2424 20.3202 23.073 21.3731 23.073Z" fill="#292D32"/></svg><span class="navbar__search__list__item__number">7</span></li>
+            </ul>
+            <div class="hamburger">
+              <div class="bar"></div>
+            </div>
+          </div>
+          <div class="navbar__loclize">
+            <div class="navbar__loclize__location navgation__wrapper__list__item dropdown"><a href="javascript:void(0)"> 
+                <div class="navbar__loclize__location__delivery-to">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="38" height="23" viewBox="0 0 38 23" fill="none"><path d="M1.7207 6.07178H15.4458" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.87427 9.14368H19.5993" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.7207 12.2147H15.4458" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.42627 12.4106V17.3764C6.42627 18.1619 7.05309 18.7982 7.82687 18.7982H11.5148" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.621 18.7979H24.7559C25.5297 18.7979 26.1565 18.1616 26.1565 17.3761V4.57858V2.47273C26.1565 1.68723 25.5297 1.0509 24.7559 1.0509H9.0874" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.64735 1.0509H7.82687C7.05309 1.0509 6.42627 1.68723 6.42627 2.47274V5.79949" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.2156 18.7981C17.2156 20.2727 16.0379 21.4682 14.5853 21.4682C13.1327 21.4682 11.9551 20.2727 11.9551 18.7981C11.9551 17.3234 13.1327 16.1279 14.5853 16.1279C16.0379 16.1269 17.2156 17.3224 17.2156 18.7981Z" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M31.4579 21.4658C32.9084 21.3845 34.0193 20.125 33.9393 18.6525C33.8592 17.1801 32.6185 16.0523 31.168 16.1335C29.7176 16.2148 28.6066 17.4743 28.6867 18.9468C28.7667 20.4192 30.0074 21.547 31.4579 21.4658Z" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M22.7944 18.7981H28.4988" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M26.1567 5.85645H30.6475C31.0633 5.85645 31.4532 6.06551 31.6882 6.41462L35.2101 11.6595H35.4631C36.1579 11.6605 36.7207 12.2319 36.7207 12.9372V17.5193C36.7207 18.2257 36.1569 18.797 35.4621 18.797H34.1494" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M35.2087 11.5063H30.0782C29.3824 11.5063 28.8196 10.9606 28.8196 10.2881V8.36633" stroke="#292D32" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg> Delivery to</div><img class="navbar__loclize__location__flag" src="./images/flages/kuwait.webp" alt="cuntry flag"> KW</a>
+              <ul class="dropdown__list">
+                <li> <a href="#"><img class="navbar__loclize__location__flag" src="./images/flages/kuwait.webp" alt="cuntry flag">Kw</a></li>
+                <li><a href="#"><img class="navbar__loclize__location__flag" src="./images/flages/egypt.webp" alt="cuntry flag">Egypt</a></li>
+              </ul>
+            </div>
+            <div class="navbar__loclize__language navgation__wrapper__list__item dropdown"><a href="#">
+                 English </a>
+              <ul class="dropdown__list">
+                <li> <a href="#">English </a></li>
+                <li><a href="#">Arabic </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navgation">
+        <div class="container">
+          <div class="navgation__wrapper"> 
+            <ul class="navgation__wrapper__list">
+              <li class="navgation__wrapper__list__item"><a href="./index.html">Home</a></li>
+              <li class="navgation__wrapper__list__item dropdown"><a href="javascript:void(0)">SERVEWARE</a>
+                <ul class="dropdown__list">
+                  <li><a href="./about.html">irem 1 irem 1 irem 1 </a></li>
+                  <li><a href="#">irem 1 irem 1  </a></li>
+                  <li><a href="#">irem 1 irem 1 </a></li>
+                  <li><a href="#">irem 1 irem 1 irem 1 irem 1 </a></li>
+                  <li><a href="#">irem 1 </a></li>
+                </ul>
+              </li>
+              <li class="navgation__wrapper__list__item dropdown"><a href="javascript:void(0)">ACCESSORIES</a>
+                <ul class="dropdown__list">
+                  <li><a href="#">irem 1 </a></li>
+                </ul>
+              </li>
+              <li class="navgation__wrapper__list__item dropdown"><a href="javascript:void(0)">DISPOSABLES</a>
+                <ul class="dropdown__list">
+                  <li><a href="#">irem 1 </a></li>
+                </ul>
+              </li>
+              <li class="navgation__wrapper__list__item dropdown"><a href="javascript:void(0)">KIDS</a>
+                <ul class="dropdown__list">
+                  <li><a href="#">irem 1 </a></li>
+                </ul>
+              </li>
+              <li class="navgation__wrapper__list__item dropdown"><a href="javascript:void(0)">CAMPING</a>
+                <ul class="dropdown__list">
+                  <li><a href="#">irem 1 </a></li>
+                </ul>
+              </li>
+              <li class="navgation__wrapper__list__item dropdown"><a href="javascript:void(0)">JANITORIALS & AIR FRESHENERS</a>
+                <ul class="dropdown__list">
+                  <li><a href="#">irem 1 </a></li>
+                  <li><a href="#">irem 2 </a></li>
+                </ul>
+              </li>
+              <li class="navgation__wrapper__list__item dropdown"><a href="javascript:void(0)">GIFTS</a>
+                <ul class="dropdown__list">
+                  <li><a href="#">irem 1 </a></li>
+                </ul>
+              </li>
+              <li class="navgation__wrapper__list__item dropdown"><a href="javascript:void(0)">Themes</a>
+                <ul class="dropdown__list">
+                  <li><a href="./theme.html">theme 1 </a></li>
+                  <li><a href="#">theme 2 </a></li>
+                  <li><a href="#">theme 3 </a></li>
+                  <li><a href="#">theme 4 </a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="navgation__wrapper__btn">
+              <button class="btn"><a href="#">sale</a></button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <section class="pt-4"> 
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="current"> <a href="./index.html">Home</a></li>
+          <li>Product Name</li>
+        </ul>
+      </div>
+    </section>
+    <div class="toast slide-in-toast fw-regolar" role="alert" aria-live="assertive" aria-atomic="true" id="copyToast">
+      <div class="d-flex">
+        <div class="toast-body">You Can Share product, Link have been copied to clipboard</div>
+      </div>
+    </div>
+    <div class="single-product pb-5">
+      <div class="container"> 
+        <div class="row"> 
+          <div class="col-12 col-lg-6">
+            <div class="single-product__gallery">
+              <div class="single-product__gallery__thumbnails"> 
+                <div class="slider slider-nav">
+                  <div> <img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+                  <div> <img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+                  <div> <img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+                  <div> <img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+                  <div> <img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+                </div>
+              </div>
+              <div class="single-product__gallery__main"> 
+                <div class="slider slider-for">
+                  <div> <img class="img-fluid" src="./images/single-product/slider-img1.webp" alt=""></div>
+                  <div> <img class="img-fluid" src="./images/single-product/slider-img1.webp" alt=""></div>
+                  <div> <img class="img-fluid" src="./images/single-product/slider-img1.webp" alt=""></div>
+                  <div> <img class="img-fluid" src="./images/single-product/slider-img1.webp" alt=""></div>
+                  <div> <img class="img-fluid" src="./images/single-product/slider-img1.webp" alt=""></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="single-product__info">
+              <h4 class="single-product__info__headding">product Name product Name product Name </h4>
+              <p class="single-product__info__sku">SKU-8757</p>
+              <h5 class="fw-bold product_card__content__cartPrice__price">20,000 kwd <span class="fw-normal old-price">25,000 kwd</span></h5>
+              <div class="single-product__info__rate"> 
+                <div class="single-product__info__rate__stars"><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star"></i>
+                </div><span class="single-product__info__rate__review">13 Reviews</span>
+              </div>
+              <div class="single-product__info__actions"> 
+                <div class="single-product__info__actions__colors"> 
+                  <h5>Color</h5>
+                  <ul> 
+                    <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
+                    <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
+                    <li class="product_card__content__actions__color" style="background-color: #74A7D6"></li>
+                    <li class="product_card__content__actions__color" style="background-color: #C35959"></li>
+                    <li class="product_card__content__actions__color" style="background-color: #239393"></li>
+                    <li class="product_card__content__actions__color" style="background-color: #74D6A1"></li>
+                  </ul>
+                </div>
+                <div class="single-product__info__actions__count" id="item-single-product">
+                  <button class="btn decrement" data-id="single-product"><i class="fa-solid fa-minus"></i></button><span class="value">1</span>
+                  <button class="btn increment" data-id="single-product"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <button class="single-product__info__actions__addCart">Add to Cart</button>
+              </div>
+              <div class="single-product__info__gift"> 
+                <div class="switcheryParent">
+                  <div class="switchery">
+                    <input type="checkbox" id="switchOne"/>
+                    <label for="switchOne">Toggle</label>
+                  </div>
+                  <label for="switchOne">Gift Wrap 3 KWD</label>
+                </div>
+                <div class="switcheryParent">
+                  <div class="switchery">
+                    <input type="checkbox" id="switchTwo"/>
+                    <label for="switchTwo">Toggle</label>
+                  </div>
+                  <label for="switchTwo">Gift Card</label>
+                </div>
+              </div>
+              <div class="single-product__info__sticker"> 
+                <h4 class="product__info__sticker__title m-0">Add sticker</h4>
+                <div class="single-product__info__sticker__dropdown">
+                  <h6 class="single-product__info__sticker__dropdown__title">Choose an Option </h6>
+                </div>
+                <div class="single-product__info__sticker__dropdown__list"> 
+                  <form> 
+                    <ul class="mb-4">
+                      <li>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1"> Default radio</label>
+                      </li>
+                      <li>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2"> Default radio</label>
+                      </li>
+                      <li>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                        <label class="form-check-label" for="flexRadioDefault3"> Default radio</label>
+                      </li>
+                      <li>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                        <label class="form-check-label" for="flexRadioDefault4"> Default radio</label>
+                      </li>
+                    </ul>
+                    <h4 class="product__info__sticker__title m-2 mb-3">Add sticker</h4>
+                    <input class="form-control mb-3" type="text" placeholder="Add sticker">
+                    <button type="submit">Save</button>
+                  </form>
+                </div>
+              </div>
+              <div class="single-product__info__tabs"> 
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-tab-pane" type="button" role="tab" aria-controls="description-tab-pane" aria-selected="true">Description</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="delivery-tab" data-bs-toggle="tab" data-bs-target="#delivery-tab-pane" type="button" role="tab" aria-controls="delivery-tab-pane" aria-selected="false">Delivery</button>
+                    </li>
+                  </ul>
+                  <button class="btn__share" id="copyBtn"><i class="fa-regular fa-share-from-square"></i>  Shere</button>
+                </div>
+                <div class="tab-content" id="productTabsContent">
+                  <div class="tab-pane fade show active" id="description-tab-pane" role="tabpanel" aria-labelledby="description-tab" tabindex="0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidideunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation uaisllamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.   dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat noncssc lorem ispum dolorrr roident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit aet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore msdiagna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolor.eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culsdsipa qui 
+                  </div>
+                  <div class="tab-pane fade" id="delivery-tab-pane" role="tabpanel" aria-labelledby="delivery-tab" tabindex="0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidideunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation uaisllamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.   dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat noncssc lorem ispum dolorrr roident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit aet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore msdiagna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolor.eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culsdsipa qui 
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section> 
+      <div class="video-container"><img class="video-thumbnail" src="./images/single-product/video-thumbnail.webp" alt="Video Thumbnail">
+        <div class="play-button" onclick="playVideo()"><i class="fa fa-play"></i></div>
+        <video id="video" controls>
+          <source src="video.mp4" type="video/mp4">Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+    <section class="review pt-5 pb-4"> 
+      <div class="container"> 
+        <div class="section__header">
+          <h2 class="section__header__headding">customer reviews </h2>
+        </div>
+        <div class="review__count"> <span>13 Reviews </span>
+          <button class="single-product__info__actions__addCart" type="button" data-bs-toggle="modal" data-bs-target="#addReview">write a Review</button>
+        </div>
+        <hr>
+        <div class="review__samples"> 
+          <div class="review__samples__item"> 
+            <h3 class="review__samples__item__name">Name </h3>
+            <div class="review__samples__item__rate"><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star"></i>
+            </div>
+            <h6 class="review__samples__item__country">Country: Kuwait</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidideunt ut labore et dolore magna aliqua. Ut enim ad</p>
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4">
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+            </div>
+          </div>
+          <hr>
+          <div class="review__samples__item"> 
+            <h3 class="review__samples__item__name">Name </h3>
+            <div class="review__samples__item__rate"><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star active "></i><i class="fa-regular fa-star"></i>
+            </div>
+            <h6 class="review__samples__item__country">Country: Kuwait</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidideunt ut labore et dolore magna aliqua. Ut enim ad</p>
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4">
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+              <div class="col"><img class="img-fluid" src="./images/single-product/thumbnail-img1.webp" alt=""></div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </section>
+    <section class="py-4">
+      <div class="container"> 
+        <div class="section__header">
+          <h2 class="section__header__headding">Related Products </h2>
+        </div>
+        <div class="owl-carousel owl-theme owl-carousel--products owl-nav-center py-3">
+          <div class="item"> 
+            <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4">
+      <div class="container"> 
+        <div class="section__header">
+          <h2 class="section__header__headding">Recently viewed </h2>
+        </div>
+        <div class="owl-carousel owl-theme owl-carousel--products owl-nav-center py-3">
+          <div class="item"> 
+            <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4">
+      <div class="container"> 
+        <div class="section__header">
+          <h2 class="section__header__headding">NEW PRODUCTS </h2>
+        </div>
+        <div class="owl-carousel owl-theme owl-carousel--products owl-nav-center py-3">
+          <div class="item"> 
+            <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item"> 
+            <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
+              <div class="product_card__content">
+                <div class="product_card__content__product mb-2">
+                  <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                </div>
+                <div class="product_card__content__cartPrice mb-2">
+                  <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer pt-4"> 
+      <div class="container"> 
+        <div class="footer__top">
+          <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-3 order-0"><img class="mb-3" src="./images/logo.webp" alt="alt" title="logo">
+              <ul class="footer__list">
+                <li class="footer__list__item"> 
+                  <div class="footer__list__item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><g clip-path="url(#clip0_10_3785)"><path d="M14.9174 17.1975C14.8499 17.1975 14.7824 17.1975 14.7074 17.19C12.2849 16.9275 9.9299 16.0875 7.8974 14.7675C6.0074 13.5675 4.3724 11.9325 3.1724 10.0425C1.8524 8.0025 1.0124 5.64 0.757398 3.2175C0.727398 2.895 0.764898 2.5875 0.862398 2.2875C0.959898 1.9875 1.1249 1.7175 1.3349 1.485C1.5449 1.2525 1.7999 1.0725 2.0849 0.945C2.3774 0.8175 2.6849 0.75 2.9999 0.75H5.2499C5.7749 0.75 6.3149 0.9375 6.7349 1.2975C7.1474 1.65 7.4174 2.145 7.4924 2.685C7.5824 3.3525 7.7474 4.0125 7.9799 4.635C8.1299 5.04 8.1674 5.475 8.0699 5.895C7.9799 6.315 7.7699 6.705 7.4699 7.005L6.9299 7.545C7.8149 8.925 8.9849 10.1025 10.3724 10.9875L10.9124 10.4475C11.2199 10.14 11.6099 9.93 12.0299 9.8475C12.4499 9.7575 12.8849 9.7875 13.2899 9.9375C13.9124 10.17 14.5724 10.335 15.2324 10.425C15.7874 10.5 16.2824 10.7775 16.6424 11.1975C16.9949 11.6175 17.1899 12.15 17.1749 12.6975V14.94C17.1749 15.255 17.1149 15.555 16.9874 15.8475C16.8599 16.1325 16.6724 16.395 16.4474 16.605C16.2149 16.815 15.9449 16.98 15.6449 17.0775C15.4049 17.16 15.1649 17.1975 14.9174 17.1975ZM5.2649 2.25H5.2574H2.9999C2.8949 2.25 2.7974 2.2725 2.6999 2.3175C2.6024 2.355 2.5124 2.415 2.4449 2.49C2.3699 2.565 2.3174 2.655 2.2874 2.76C2.2574 2.8575 2.2424 2.9625 2.2499 3.0675C2.4824 5.25 3.2399 7.38 4.4324 9.2325C5.5199 10.9425 6.9974 12.42 8.7074 13.5075C10.5524 14.7075 12.6824 15.4575 14.8574 15.6975C14.9474 15.705 15.0524 15.69 15.1499 15.66C15.2474 15.63 15.3374 15.57 15.4199 15.5025C15.5024 15.435 15.5624 15.345 15.5999 15.2475C15.6449 15.15 15.6599 15.045 15.6599 14.94V12.69C15.6599 12.6825 15.6599 12.675 15.6599 12.675C15.6674 12.4875 15.5999 12.315 15.4799 12.1725C15.3599 12.03 15.1949 11.94 15.0149 11.9175C14.2499 11.82 13.4849 11.625 12.7499 11.355C12.6149 11.3025 12.4649 11.295 12.3299 11.325C12.1874 11.355 12.0599 11.4225 11.9549 11.5275L11.0099 12.48C10.7699 12.72 10.4024 12.765 10.1099 12.6C8.1149 11.4675 6.4649 9.81 5.3249 7.8225C5.1674 7.5075 5.2124 7.14 5.4524 6.9L6.4049 5.9475C6.5024 5.85 6.5699 5.7225 6.5999 5.58C6.6299 5.4375 6.6224 5.295 6.5699 5.16C6.2924 4.425 6.1049 3.66 5.9999 2.8875C5.9774 2.715 5.8874 2.55 5.7524 2.43C5.6174 2.3175 5.4449 2.25 5.2649 2.25Z" fill="#292D32"/></g><defs><clipPath id="clip0_10_3785"><rect width="18" height="18" fill="white"/></clipPath></defs></svg></div>
+                  <div class="footer__list__item__text">Call Us: <a href="tel:+965 94074989">+965 94074989</a></div>
+                </li>
+                <li class="footer__list__item"> 
+                  <div class="footer__list__item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 3.75C2.58921 3.75 2.25 4.08921 2.25 4.5V13.5C2.25 13.9108 2.58921 14.25 3 14.25H15C15.4108 14.25 15.75 13.9108 15.75 13.5V4.5C15.75 4.08921 15.4108 3.75 15 3.75H3ZM0.75 4.5C0.75 3.26079 1.76079 2.25 3 2.25H15C16.2392 2.25 17.25 3.26079 17.25 4.5V13.5C17.25 14.7392 16.2392 15.75 15 15.75H3C1.76079 15.75 0.75 14.7392 0.75 13.5V4.5Z" fill="#292D32"/><path fill-rule="evenodd" clip-rule="evenodd" d="M0.88564 4.06985C1.12318 3.73051 1.59082 3.64798 1.93016 3.88552L9.00006 8.83445L16.07 3.88552C16.4093 3.64798 16.877 3.73051 17.1145 4.06985C17.352 4.40918 17.2695 4.87683 16.9302 5.11437L9.43016 10.3644C9.17192 10.5451 8.82821 10.5451 8.56997 10.3644L1.06997 5.11437C0.730631 4.87683 0.648105 4.40918 0.88564 4.06985Z" fill="#292D32"/></svg></div>
+                  <div class="footer__list__item__text">Email: <a href="mailto:neststores13@gmail.com">neststores13@gmail.com</a></div>
+                </li>
+                <li class="footer__list__item"> 
+                  <div class="footer__list__item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M8.99991 10.0725C10.2923 10.0725 11.3399 9.0248 11.3399 7.73246C11.3399 6.44011 10.2923 5.39246 8.99991 5.39246C7.70757 5.39246 6.65991 6.44011 6.65991 7.73246C6.65991 9.0248 7.70757 10.0725 8.99991 10.0725Z" stroke="#292D32" stroke-width="1.5"/><path d="M2.71503 6.3675C4.19253 -0.127498 13.815 -0.119998 15.285 6.375C16.1475 10.185 13.7775 13.41 11.7 15.405C10.1925 16.86 7.80753 16.86 6.29253 15.405C4.22253 13.41 1.85253 10.1775 2.71503 6.3675Z" stroke="#292D32" stroke-width="1.5"/></svg></div>
+                  <div class="footer__list__item__text">Call Us: <a href="#">creative Design center -Industrial Shuwaikh Block: 1 Street: 10 Building : 63 ,Kuwait</a></div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-6 col-lg-2 order-3 order-md-2">
+              <h4 class="footer__title">Account</h4>
+              <ul class="footer__list"> 
+                <li class="footer__list__item">
+                  <div class="footer__list__item__text"><a href="#">My Account </a></div>
+                </li>
+                <li class="footer__list__item"> 
+                  <div class="footer__list__item__text"><a href="#">Orders</a></div>
+                </li>
+                <li class="footer__list__item"> 
+                  <div class="footer__list__item__text"><a href="#">Track order</a></div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 order-2 order-md-3">
+              <h4 class="footer__title">Subcribe newsletter</h4>
+              <p>Subscribe to our newsletter and receive latest best offers on time directly in your mailbox!</p>
+              <form action="">
+                <input class="form-control" type="text" placeholder="Ender Your Email" requeried="">
+              </form>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 order-4">
+              <h4 class="footer__title">help</h4>
+              <ul class="footer__list"> 
+                <li class="footer__list__item">
+                  <div class="footer__list__item__text"><a href="about.html">About Us</a></div>
+                </li>
+                <li class="footer__list__item"> 
+                  <div class="footer__list__item__text"><a href="#">Privacy Policy</a></div>
+                </li>
+                <li class="footer__list__item"> 
+                  <div class="footer__list__item__text"><a href="#">Return & Exchange Policy</a></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom"> 
+          <div class="row py-3 align-items-center">
+            <div class="col-12 col-md-4"> 
+              <p class="mb-0">All Rights Reserved ©2023 neststores</p>
+            </div>
+            <div class="col-12 col-md-4 text-center d-none"><img src="./images/footer/payment.webp" alt="payment methods" title="payment methods"></div>
+            <div class="col-12 col-md-4"> 
+              <div class="footer__social">
+                 Follow Us
+                <ul class="footer__social__list">
+                  <li class="footer__social__list__item"> <a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                  <li class="footer__social__list__item"> <a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li class="footer__social__list__item"> <a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li class="footer__social__list__item"> <a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                  <li class="footer__social__list__item"> <a href="#"><i class="fa-brands fa-snapchat"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./js/owl-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./js/slick-init.js"></script>
+    <script src="./js/single-product.js"></script>
+    <script src="./js/navgation.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

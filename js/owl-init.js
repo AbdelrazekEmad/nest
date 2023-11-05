@@ -35,7 +35,7 @@ $(".owl-carousel--categories").owlCarousel({
 $(".owl-carousel--products").owlCarousel({
   rtl: dir == "rtl" ? true : false,
   loop: false,
-  margin: 20,
+  margin: 10,
   nav: true,
   dots: false,
   items: 1,
@@ -50,6 +50,43 @@ $(".owl-carousel--products").owlCarousel({
     },
     1000: {
       items: 4,
+    },
+  },
+});
+
+$(".owl-carousel--sub-category").owlCarousel({
+  rtl: dir == "rtl" ? true : false,
+  loop: false,
+  margin: 20,
+  nav: true,
+  dots: false,
+  items: 1,
+  animateOut: "fadeOut",
+  navText: ["<i class='fa-solid fa-angle-left'></i>", "<i class='fa-solid fa-angle-right'></i>"],
+  responsive: {
+    0: {
+      items: 2,
+    },
+    600: {
+      items: 4,
+    },
+    1000: {
+      items: 6,
+    },
+  },
+});
+
+$(".owl-carousel--thumbnails").owlCarousel({
+  items: 3, // Number of items to display at a time
+  loop: false, // Infinite loop
+  margin: 10, // Margin between items
+  nav: true, // Display navigation arrows
+  dots: false, // Hide navigation dots
+  mouseDrag: false,
+  touchDrag: false,
+  responsive: {
+    0: {
+      items: 1,
     },
   },
 });

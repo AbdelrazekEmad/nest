@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"/>
-    <link rel="stylesheet" href="css/main-rtl.css"/>
+    <link rel="stylesheet" href="css/main-ltr.css"/>
   </head>
   <body> 
+    <!-- Start NavBar-->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
         <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -219,55 +218,154 @@
         </div>
       </nav>
     </div>
-    <section class="hero pt-3"> 
-      <div class="container h-100">
-        <div class="row h-100 g-3">
-          <div class="col-12 col-lg-8"> 
-            <div class="owl-carousel owl-theme owl-carousel--hero"> 
-              <div class="item hero__slide" style="background-image: url(./images/hero/slide1.webp)">
-                <div class="hero__slide__item">
-                  <div class="hero__slide__item__content"> 
-                    <h1 class="hero__slide__item__content__headding">Descor <br> Vases.</h1>
-                    <p class="hero__slide__item__content__pragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                    <button class="btn hero__slide__item__content__btn"><a href="#">Shop Now </a></button>
-                  </div>
-                </div>
+    <!-- End NavBar-->
+    <!-- start information section -->
+    <section class="information payment main-forms">
+      <div class="container">
+        <div class="information__wrapper">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="information__wrapper__breadcrumb">
+                <ul class="breadcrumb">
+                  <li class="current current--last"> <a href="./cart.html">cart</a></li>
+                  <li class="current current--last"> <a href="./information.html">Information</a></li>
+                  <li class="current current--last"> <a href="./information.html">Shipping </a></li>
+                  <li class="current-tab">Payment </li>
+                </ul>
               </div>
-              <div class="item hero__slide" style="background-image: url(./images/hero/slide2.webp)">
-                <div class="hero__slide__item">
-                  <div class="hero__slide__item__content"> 
-                    <h1 class="hero__slide__item__content__headding">Mix <br> Accessories.</h1>
-                    <p class="hero__slide__item__content__pragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                    <button class="btn hero__slide__item__content__btn"><a href="#">Shop Now </a></button>
+              <div class="information__wrapper__form">
+                <form action=""> 
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <div class="edit">
+                        <p>Contact </p>
+                        <p>boda@gmail.com </p>
+                      </div><a class="ms-auto" href="information.html">Change </a>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="item hero__slide" style="background-image: url(./images/hero/slide3.webp)">
-                <div class="hero__slide__item">
-                  <div class="hero__slide__item__content"> 
-                    <h1 class="hero__slide__item__content__headding">Natural <br> Plants.</h1>
-                    <p class="hero__slide__item__content__pragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                    <button class="btn hero__slide__item__content__btn"><a href="#">Shop Now </a></button>
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <div class="edit">
+                        <p>Ship  </p>
+                        <p>lorem ipsum dolor sit amet</p>
+                      </div><a class="ms-auto" href="information.html">Change </a>
+                    </div>
                   </div>
-                </div>
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <input class="form-check-input" type="radio" name="method-1" value="" id="method-1">
+                      <label for="method-1">DHL EXPRESS WORLDWIDE </label>
+                      <p class="ms-auto mb-0">70.000 KWD</p>
+                    </div>
+                  </div>
+                  <div class="space-30"></div>
+                  <div class="title flex-column align-items-start">
+                    <h6>Payment </h6>
+                    <p>All transactions are secure and encrypted</p>
+                  </div>
+                  <div class="form-group mb-0" id="method-parent-1">
+                    <div class="form-control form-control--custom flex-column flex-md-row">
+                      <div class="d-flex align-items-center mb-3 mb-md-0">
+                        <input class="form-check-input" type="radio" name="method" value="" id="method-2" checked>
+                        <label for="method-2">DHL EXPRESS WORLDWIDE </label>
+                      </div>
+                      <ul class="d-flex align-items-center ms-md-auto gap-2">
+                        <li><img src="./images/payment/visa1.webp"></li>
+                        <li><img src="./images/payment/visa2.webp"></li>
+                        <li><img src="./images/payment/visa3.webp"></li>
+                        <li><img src="./images/payment/visa4.webp"></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="icon-box"> <img src="./images/icon2.svg" alt="">
+                    <p>After clicking " pay now " you will be redirected to Myfatoorah to complete your purchase securely</p>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="form-control form-control--custom-2">
+                      <input class="form-check-input" type="radio" name="method" value="" id="method-3">
+                      <label for="method-3">Cash on delivery ( kuwait only ) </label>
+                    </div>
+                  </div>
+                  <div class="space-30"></div>
+                  <div class="title">
+                    <h6>Billing address </h6>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <input class="form-check-input" type="radio" name="method-4" value="" id="method-4" checked>
+                      <label for="method-4">Same as shipping address</label>
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <input class="form-check-input" type="radio" name="method-4" value="" id="method-5">
+                      <label for="method-5">Same as shipping address </label>
+                    </div>
+                  </div>
+                  <div class="controls"><a class="btn main-btn" href="thanks.html">Pay now </a></div>
+                </form>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-4"> 
-            <div class="row g-3">
-              <div class="col-6 col-lg-12"> 
-                <div class="hero__side__img"><img src="./images/hero/hero-side-img1.webp" width="100%" height="218" alt="">
-                  <div class="hero__side__img__content hero__side__img__content--one">
-                    <h5>SEVE-WARE</h5>
-                    <p>Lorem ipsum dolor sit amet</p>
+            <div class="col-lg-5">
+              <div class="checkout-box">
+                <div class="checkout-box__items">
+                  <div class="checkout-box__items__item">
+                    <div class="checkout-box__items__item__wrapper">
+                      <div class="checkout-box__items__item__wrapper__img-name">
+                        <div class="img"><img class="img-fluid" src="./images/cart/cart.webp" alt="img"><span>1</span></div>
+                        <h3>product nameigdsg khyudg dsyhlghad sgjglhg jkagwy lhjdsgvh</h3>
+                      </div>
+                      <p class="checkout-box__items__item__wrapper__price">12.000 KEW</p>
+                    </div>
+                  </div>
+                  <div class="checkout-box__items__item">
+                    <div class="checkout-box__items__item__wrapper">
+                      <div class="checkout-box__items__item__wrapper__img-name">
+                        <div class="img"><img class="img-fluid" src="./images/cart/cart.webp" alt="img"><span>1</span></div>
+                        <h3>product nameigdsg khyudg dsyhlghad sgjglhg jkagwy lhjdsgvh</h3>
+                      </div>
+                      <p class="checkout-box__items__item__wrapper__price">12.000 KEW</p>
+                    </div>
+                  </div>
+                  <div class="checkout-box__items__item">
+                    <div class="checkout-box__items__item__wrapper">
+                      <div class="checkout-box__items__item__wrapper__img-name">
+                        <div class="img"><img class="img-fluid" src="./images/cart/cart.webp" alt="img"><span>1</span></div>
+                        <h3>product nameigdsg khyudg dsyhlghad sgjglhg jkagwy lhjdsgvh</h3>
+                      </div>
+                      <p class="checkout-box__items__item__wrapper__price">12.000 KEW</p>
+                    </div>
+                  </div>
+                  <div class="checkout-box__items__item">
+                    <div class="checkout-box__items__item__wrapper">
+                      <div class="checkout-box__items__item__wrapper__img-name">
+                        <div class="img"><img class="img-fluid" src="./images/cart/cart.webp" alt="img"><span>1</span></div>
+                        <h3>product nameigdsg khyudg dsyhlghad sgjglhg jkagwy lhjdsgvh</h3>
+                      </div>
+                      <p class="checkout-box__items__item__wrapper__price">12.000 KEW</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-6 col-lg-12"> 
-                <div class="hero__side__img"><img src="./images/hero/hero-side-img2.webp" width="100%" height="218" alt="">
-                  <div class="hero__side__img__content hero__side__img__content--two">
-                    <h5>GIFTS</h5>
-                    <p>Lorem ipsum dolor sit amet</p>
+                <div class="checkout-box__promoCode">
+                  <form action="#">
+                    <div class="input-group mb-3">
+                      <input class="form-control" type="text" placeholder="Discount code">
+                      <button class="btn " type="submit" id="button-addon2">Apply </button>
+                    </div>
+                  </form>
+                </div>
+                <div class="checkout-box__prices"> 
+                  <div class="checkout-box__prices__price">
+                    <h5>subtotal </h5>
+                    <p>70.000 KWD </p>
+                  </div>
+                  <div class="checkout-box__prices__price">
+                    <h5>shipping </h5>
+                    <p>40 KWD </p>
+                  </div>
+                  <div class="checkout-box__prices__price">
+                    <h5>total </h5>
+                    <p>74.000 KWD </p>
                   </div>
                 </div>
               </div>
@@ -276,14 +374,7 @@
         </div>
       </div>
     </section>
-    <section class="py-5 categories"> 
-      <div class="container"> 
-        <div class="section__header">
-          <h2 class="section__header__headding">test test test </h2>
-          <button class="btn section__header__btn"><a href="http://google.com">View All</a></button>
-        </div>
-      </div>
-    </section>
+    <!-- Start footer-->
     <footer class="footer pt-4"> 
       <div class="container"> 
         <div class="footer__top">
@@ -363,10 +454,11 @@
         </div>
       </div>
     </footer>
+    <!-- End footer-->
+    <!-- Start Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="./js/owl-init.js"></script>
+    <script src="./js/custom-select.js"></script>
     <script src="./js/navgation.js"></script>
     <script src="./js/main.js"></script>
   </body>
