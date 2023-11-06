@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"/>
-    <link rel="stylesheet" href="css/main-ltr.css"/>
+    <link rel="stylesheet" href="css/main-rtl.css"/>
   </head>
   <body> 
+    <!-- Start NavBar-->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
         <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -222,384 +223,163 @@
         </div>
       </nav>
     </div>
-    <section class="py-5">
-      <div class="container"> 
-        <div class="row g-3">
-          <div class="col-12 col-md-2">
-            <h3>Filter</h3>
-            <form class="filtration">
-              <div class="filtration__wrapper"> 
-                <div class="filtration__wrapper__item open">
-                  <h5 class="filtration__wrapper__item__headding">Category </h5>
-                  <div class="filtration__wrapper__item__dropdown"> 
-                    <div class="form-check pb-1"> 
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                      <label class="form-check-label" for="flexCheckDefault1">Subcategory</label>
-                    </div>
-                    <div class="form-check pb-1"> 
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                      <label class="form-check-label" for="flexCheckDefault2">Subcategory</label>
-                    </div>
-                    <div class="form-check pb-1"> 
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
-                      <label class="form-check-label" for="flexCheckDefault3">Subcategory</label>
-                    </div>
-                    <div class="form-check pb-1"> 
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
-                      <label class="form-check-label" for="flexCheckDefault4">Subcategory</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="filtration__wrapper__item">
-                  <h5 class="filtration__wrapper__item__headding">Category </h5>
-                  <div class="filtration__wrapper__item__dropdown">
-                    <div class="form-check pb-1"> 
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
-                      <label class="form-check-label" for="flexCheckDefault5">Subcategory2</label>
-                    </div>
-                    <div class="form-check pb-1"> 
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
-                      <label class="form-check-label" for="flexCheckDefault6">Subcategory2</label>
-                    </div>
-                    <div class="form-check pb-1"> 
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7">
-                      <label class="form-check-label" for="flexCheckDefault7">Subcategory2</label>
-                    </div>
-                    <div class="form-check pb-1"> 
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault8">
-                      <label class="form-check-label" for="flexCheckDefault8">Subcategory2</label>
-                    </div>
-                  </div>
-                </div>
+    <!-- End NavBar-->
+    <!-- start information section -->
+    <section class="information payment main-forms">
+      <div class="container">
+        <div class="information__wrapper">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="information__wrapper__breadcrumb">
+                <ul class="breadcrumb">
+                  <li class="current current--last"> <a href="./cart.html">cart</a></li>
+                  <li class="current current--last"> <a href="./information.html">Information</a></li>
+                  <li class="current current--last"> <a href="./information.html">Shipping </a></li>
+                  <li class="current-tab">Payment </li>
+                </ul>
               </div>
-            </form>
-            <button class="btn filtration__btn" type="submit">Search</button>
-          </div>
-          <div class="col-12 col-md-10">
-            <div class="section__header">
-              <h2 class="section__header__headding">Category Name </h2>
+              <div class="information__wrapper__form">
+                <form action=""> 
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <div class="edit">
+                        <p>Contact </p>
+                        <p>boda@gmail.com </p>
+                      </div><a class="ms-auto" href="information.html">Change </a>
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <div class="edit">
+                        <p>Ship  </p>
+                        <p>lorem ipsum dolor sit amet</p>
+                      </div><a class="ms-auto" href="information.html">Change </a>
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <input class="form-check-input" type="radio" name="method-1" value="" id="method-1">
+                      <label for="method-1">DHL EXPRESS WORLDWIDE </label>
+                      <p class="ms-auto mb-0">70.000 KWD</p>
+                    </div>
+                  </div>
+                  <div class="space-30"></div>
+                  <div class="title flex-column align-items-start">
+                    <h6>Payment </h6>
+                    <p>All transactions are secure and encrypted</p>
+                  </div>
+                  <div class="form-group mb-0" id="method-parent-1">
+                    <div class="form-control form-control--custom flex-column flex-md-row">
+                      <div class="d-flex align-items-center mb-3 mb-md-0">
+                        <input class="form-check-input" type="radio" name="method" value="" id="method-2" checked>
+                        <label for="method-2">DHL EXPRESS WORLDWIDE </label>
+                      </div>
+                      <ul class="d-flex align-items-center ms-md-auto gap-2">
+                        <li><img src="./images/payment/visa1.webp"></li>
+                        <li><img src="./images/payment/visa2.webp"></li>
+                        <li><img src="./images/payment/visa3.webp"></li>
+                        <li><img src="./images/payment/visa4.webp"></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="icon-box"> <img src="./images/icon2.svg" alt="">
+                    <p>After clicking " pay now " you will be redirected to Myfatoorah to complete your purchase securely</p>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="form-control form-control--custom-2">
+                      <input class="form-check-input" type="radio" name="method" value="" id="method-3">
+                      <label for="method-3">Cash on delivery ( kuwait only ) </label>
+                    </div>
+                  </div>
+                  <div class="space-30"></div>
+                  <div class="title">
+                    <h6>Billing address </h6>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <input class="form-check-input" type="radio" name="method-4" value="" id="method-4" checked>
+                      <label for="method-4">Same as shipping address</label>
+                    </div>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="form-control">
+                      <input class="form-check-input" type="radio" name="method-4" value="" id="method-5">
+                      <label for="method-5">Same as shipping address </label>
+                    </div>
+                  </div>
+                  <div class="controls"><a class="btn main-btn" href="thanks.html">Pay now </a></div>
+                </form>
+              </div>
             </div>
-            <div class="row pt-4 g-4">
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+            <div class="col-lg-5">
+              <div class="checkout-box">
+                <div class="checkout-box__items">
+                  <div class="checkout-box__items__item">
+                    <div class="checkout-box__items__item__wrapper">
+                      <div class="checkout-box__items__item__wrapper__img-name">
+                        <div class="img"><img class="img-fluid" src="./images/cart/cart.webp" alt="img"><span>1</span></div>
+                        <h3>product nameigdsg khyudg dsyhlghad sgjglhg jkagwy lhjdsgvh</h3>
+                      </div>
+                      <p class="checkout-box__items__item__wrapper__price">12.000 KEW</p>
                     </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
+                  </div>
+                  <div class="checkout-box__items__item">
+                    <div class="checkout-box__items__item__wrapper">
+                      <div class="checkout-box__items__item__wrapper__img-name">
+                        <div class="img"><img class="img-fluid" src="./images/cart/cart.webp" alt="img"><span>1</span></div>
+                        <h3>product nameigdsg khyudg dsyhlghad sgjglhg jkagwy lhjdsgvh</h3>
+                      </div>
+                      <p class="checkout-box__items__item__wrapper__price">12.000 KEW</p>
                     </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
+                  </div>
+                  <div class="checkout-box__items__item">
+                    <div class="checkout-box__items__item__wrapper">
+                      <div class="checkout-box__items__item__wrapper__img-name">
+                        <div class="img"><img class="img-fluid" src="./images/cart/cart.webp" alt="img"><span>1</span></div>
+                        <h3>product nameigdsg khyudg dsyhlghad sgjglhg jkagwy lhjdsgvh</h3>
+                      </div>
+                      <p class="checkout-box__items__item__wrapper__price">12.000 KEW</p>
+                    </div>
+                  </div>
+                  <div class="checkout-box__items__item">
+                    <div class="checkout-box__items__item__wrapper">
+                      <div class="checkout-box__items__item__wrapper__img-name">
+                        <div class="img"><img class="img-fluid" src="./images/cart/cart.webp" alt="img"><span>1</span></div>
+                        <h3>product nameigdsg khyudg dsyhlghad sgjglhg jkagwy lhjdsgvh</h3>
+                      </div>
+                      <p class="checkout-box__items__item__wrapper__price">12.000 KEW</p>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
+                <div class="checkout-box__promoCode">
+                  <form action="#">
+                    <div class="input-group mb-3">
+                      <input class="form-control" type="text" placeholder="Discount code">
+                      <button class="btn " type="submit" id="button-addon2">Apply </button>
                     </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
+                  </form>
                 </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
+                <div class="checkout-box__prices"> 
+                  <div class="checkout-box__prices__price">
+                    <h5>subtotal </h5>
+                    <p>70.000 KWD </p>
                   </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
+                  <div class="checkout-box__prices__price">
+                    <h5>shipping </h5>
+                    <p>40 KWD </p>
                   </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card new"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__new"><span>new</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3">
-                <div class="product_card onSale"><a class="product_card__img" href="./single-product.html"><img src="./images/products/img-1.webp" alt="product name"><span class="product_card__img__sale"><span>15% off</span></span></a>
-                  <div class="product_card__content">
-                    <div class="product_card__content__product mb-2">
-                      <h5 class="product_card__content__product__title">Name Product Name Product Name </h5><span class="product_card__content__product__love"><i class="fa-regular fa-heart"></i></span>
-                    </div>
-                    <div class="product_card__content__cartPrice mb-2">
-                      <button class="btn product_card__content__cartPrice__addToCart"><a href="./cart.html">add to cart </a></button><span class="product_card__content__cartPrice__price">12 kwd <span class="old-price">30 kwd</span></span>
-                    </div>
-                    <div class="product_card__content__actions"> <span>Select option</span>
-                      <ul> 
-                        <li class="product_card__content__actions__color" style="background-color: #585858"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #EECF60"> </li>
-                        <li class="product_card__content__actions__color" style="background-color: #74A7D6"> </li>
-                      </ul>
-                    </div>
+                  <div class="checkout-box__prices__price">
+                    <h5>total </h5>
+                    <p>74.000 KWD </p>
                   </div>
                 </div>
               </div>
             </div>
-            <nav class="pt-5" aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&#8249;</span></a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&#8250;</span></a></li>
-              </ul>
-            </nav>
           </div>
         </div>
       </div>
     </section>
+    <!-- Start footer-->
     <footer class="footer pt-4"> 
       <div class="container"> 
         <div class="footer__top">
@@ -679,9 +459,11 @@
         </div>
       </div>
     </footer>
+    <!-- End footer-->
+    <!-- Start Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/filtration.js"></script>
+    <script src="./js/custom-select.js"></script>
     <script src="./js/navgation.js"></script>
     <script src="./js/main.js"></script>
   </body>

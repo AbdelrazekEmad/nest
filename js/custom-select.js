@@ -65,3 +65,22 @@ function closeAllSelect(elmnt) {
   }
 }
 document.addEventListener("click", closeAllSelect);
+
+
+
+
+
+
+// select 
+if(document.querySelector(".select-selected")){
+  $(".select-items").click(()=> {
+    if(document.querySelector(".select-selected").textContent == "kuwait") {
+      $(".kuwait").removeClass("d-none")
+      $(".global").addClass("d-none")
+    }
+    if(document.querySelector(".select-selected").textContent == "global") {
+      $(".global").removeClass("d-none")
+      $(".kuwait").addClass("d-none")
+    }
+  })
+}

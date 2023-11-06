@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"/>
-    <link rel="stylesheet" href="css/main-ltr.css"/>
+    <link rel="stylesheet" href="css/main-rtl.css"/>
   </head>
   <body> 
     <!-- Start NavBar-->
@@ -224,167 +224,72 @@
       </nav>
     </div>
     <!-- End NavBar-->
-    <!-- start cart -->
-    <section class="cart-page"> 
+    <!-- start about section -->
+    <section class="about">
       <div class="container"> 
-        <div class="cart-page__wrapper">
-          <div class="cart-page__wrapper__header">
-            <h3>Your cart</h3>
-            <p>Buy more than 72,000 Kwd and get free shipping ( only for kuwait customers )</p>
-          </div>
-          <!-- cart table-->
-          <div class="cart-page__wrapper__table">
-            <div class="table-responsive table-responsive-lg">
-              <table class="summary-table table mb-0">
-                <thead>
-                  <tr>
-                    <td>Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Total</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr id="product-1">
-                    <td class="img">
-                      <div><img class="img-fluid" src="./images/cart/cart.webp" alt="img">
-                        <div>
-                          <div class="product-name"> 
-                            <h3 class="text-center">product name</h3>
-                          </div>
-                          <button class="btn remove-product ">remove</button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                    <td>
-                      <div class="cartTable__counter" id="item-1">
-                        <button class="btn decrement" data-id="1"><i class="bi bi-dash-lg"></i></button><span class="value">1</span>
-                        <button class="btn increment" data-id="1"><i class="bi bi-plus-lg"></i></button>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                  </tr>
-                  <tr id="product-2">
-                    <td class="img">
-                      <div><img class="img-fluid" src="./images/cart/cart.webp" alt="img">
-                        <div>
-                          <div class="product-name"> 
-                            <h3 class="text-center">product name</h3>
-                          </div>
-                          <button class="btn remove-product ">remove</button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                    <td>
-                      <div class="cartTable__counter" id="item-2">
-                        <button class="btn decrement" data-id="2"><i class="bi bi-dash-lg"></i></button><span class="value">1</span>
-                        <button class="btn increment" data-id="2"><i class="bi bi-plus-lg"></i></button>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                  </tr>
-                  <tr id="product-3">
-                    <td class="img">
-                      <div><img class="img-fluid" src="./images/cart/cart.webp" alt="img">
-                        <div>
-                          <div class="product-name"> 
-                            <h3 class="text-center">product name</h3>
-                          </div>
-                          <button class="btn remove-product ">remove</button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                    <td>
-                      <div class="cartTable__counter" id="item-3">
-                        <button class="btn decrement" data-id="3"><i class="bi bi-dash-lg"></i></button><span class="value">1</span>
-                        <button class="btn increment" data-id="3"><i class="bi bi-plus-lg"></i></button>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+        <div class="about__wrapper">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="about__wrapper__img"><img class="img-fluid" src="./images/about/about-1.webp" alt=""></div>
             </div>
-          </div>
-          <div class="cart-page__wrapper__controls">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="switcheryParent">
-                      <div class="switchery">
-                        <input type="checkbox" id="switch0"/>
-                        <label for="switch0">Toggle</label>
-                      </div>
-                      <label for="switch0">Luxury Chocolate Box 5 KWD</label>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="switcheryParent">
-                      <div class="switchery">
-                        <input type="checkbox" id="switch1"/>
-                        <label for="switch1">Toggle</label>
-                      </div>
-                      <label for="switch1">Luxury Chocolate Box 5 KWD</label>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="switcheryParent">
-                      <div class="switchery">
-                        <input type="checkbox" id="switch2"/>
-                        <label for="switch2">Toggle</label>
-                      </div>
-                      <label for="switch2">Luxury Chocolate Box 5 KWD</label>
-                    </div>
-                  </div>
+            <div class="col-lg-6">
+              <div class="about__wrapper__text">
+                <div class="about__wrapper__text__head">
+                  <h2>about <br> us</h2>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="cart-price">
-                  <h5>subtotal</h5><span>12.000 kwn</span>
+                <div class="about__wrapper__text__paragraph">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                 </div>
-                <div class="switcheryParent">
-                  <div class="switchery">
-                    <input type="checkbox" id="switchOne"/>
-                    <label for="switchOne">Toggle</label>
-                  </div>
-                  <label for="switchOne">Luxury Chocolate Box 5 KWD</label>
-                </div>
-                <div class="cart-controllers"><a href="all-products.html">Continue Shopping</a><a href="information.html">Checkout</a></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- end cart -->
+    <!-- end about section -->
+    <!-- start contact section -->
+    <section class="contact">
+      <div class="container-fluid">
+        <div class="contact__wrapper">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="contact__wrapper__form" style="background-image: url(./images/about/contact-bg.webp)">
+                <div class="row justify-content-end">
+                  <div class="col-8">
+                    <div class="contact__wrapper__form__head">
+                      <h3>GET IN TOUCH</h3>
+                    </div>
+                    <form action="">
+                      <div class="contact__wrapper__form__group">
+                        <input class="form-control" type="text" name="contact-name" value="" placeholder="Your name">
+                      </div>
+                      <div class="contact__wrapper__form__group">
+                        <input class="form-control" type="email" name="contact-email" value="" placeholder="Your e-mail">
+                      </div>
+                      <div class="contact__wrapper__form__group">
+                        <input class="form-control" type="text" name="contact-number" value="" placeholder="Your number">
+                      </div>
+                      <div class="contact__wrapper__form__group">
+                        <input class="form-control" type="text" name="contact-commit" value="" placeholder="Add comment">
+                      </div>
+                      <div class="contact__wrapper__form__group">
+                        <input type="submit" value="Send">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="contact__wrapper__iframe-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13813.925768314779!2d31.20538515!3d30.051731446396385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841202989c347%3A0x35df0ef06430c27b!2sBritish%20Council!5e0!3m2!1sen!2seg!4v1698841174879!5m2!1sen!2seg" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Start footer-->
     <footer class="footer pt-4"> 
       <div class="container"> 

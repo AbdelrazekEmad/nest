@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"/>
-    <link rel="stylesheet" href="css/main-ltr.css"/>
+    <link rel="stylesheet" href="css/main-rtl.css"/>
   </head>
   <body> 
-    <!-- Start NavBar-->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
         <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -223,169 +222,147 @@
         </div>
       </nav>
     </div>
-    <!-- End NavBar-->
-    <!-- start cart -->
-    <section class="cart-page"> 
-      <div class="container"> 
-        <div class="cart-page__wrapper">
-          <div class="cart-page__wrapper__header">
-            <h3>Your cart</h3>
-            <p>Buy more than 72,000 Kwd and get free shipping ( only for kuwait customers )</p>
-          </div>
-          <!-- cart table-->
-          <div class="cart-page__wrapper__table">
-            <div class="table-responsive table-responsive-lg">
-              <table class="summary-table table mb-0">
-                <thead>
-                  <tr>
-                    <td>Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Total</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr id="product-1">
-                    <td class="img">
-                      <div><img class="img-fluid" src="./images/cart/cart.webp" alt="img">
-                        <div>
-                          <div class="product-name"> 
-                            <h3 class="text-center">product name</h3>
-                          </div>
-                          <button class="btn remove-product ">remove</button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                    <td>
-                      <div class="cartTable__counter" id="item-1">
-                        <button class="btn decrement" data-id="1"><i class="bi bi-dash-lg"></i></button><span class="value">1</span>
-                        <button class="btn increment" data-id="1"><i class="bi bi-plus-lg"></i></button>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                  </tr>
-                  <tr id="product-2">
-                    <td class="img">
-                      <div><img class="img-fluid" src="./images/cart/cart.webp" alt="img">
-                        <div>
-                          <div class="product-name"> 
-                            <h3 class="text-center">product name</h3>
-                          </div>
-                          <button class="btn remove-product ">remove</button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                    <td>
-                      <div class="cartTable__counter" id="item-2">
-                        <button class="btn decrement" data-id="2"><i class="bi bi-dash-lg"></i></button><span class="value">1</span>
-                        <button class="btn increment" data-id="2"><i class="bi bi-plus-lg"></i></button>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                  </tr>
-                  <tr id="product-3">
-                    <td class="img">
-                      <div><img class="img-fluid" src="./images/cart/cart.webp" alt="img">
-                        <div>
-                          <div class="product-name"> 
-                            <h3 class="text-center">product name</h3>
-                          </div>
-                          <button class="btn remove-product ">remove</button>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                    <td>
-                      <div class="cartTable__counter" id="item-3">
-                        <button class="btn decrement" data-id="3"><i class="bi bi-dash-lg"></i></button><span class="value">1</span>
-                        <button class="btn increment" data-id="3"><i class="bi bi-plus-lg"></i></button>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>12.000 KWN</p>  
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="cart-page__wrapper__controls">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="switcheryParent">
-                      <div class="switchery">
-                        <input type="checkbox" id="switch0"/>
-                        <label for="switch0">Toggle</label>
-                      </div>
-                      <label for="switch0">Luxury Chocolate Box 5 KWD</label>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="switcheryParent">
-                      <div class="switchery">
-                        <input type="checkbox" id="switch1"/>
-                        <label for="switch1">Toggle</label>
-                      </div>
-                      <label for="switch1">Luxury Chocolate Box 5 KWD</label>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="switcheryParent">
-                      <div class="switchery">
-                        <input type="checkbox" id="switch2"/>
-                        <label for="switch2">Toggle</label>
-                      </div>
-                      <label for="switch2">Luxury Chocolate Box 5 KWD</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="cart-price">
-                  <h5>subtotal</h5><span>12.000 kwn</span>
-                </div>
-                <div class="switcheryParent">
-                  <div class="switchery">
-                    <input type="checkbox" id="switchOne"/>
-                    <label for="switchOne">Toggle</label>
-                  </div>
-                  <label for="switchOne">Luxury Chocolate Box 5 KWD</label>
-                </div>
-                <div class="cart-controllers"><a href="all-products.html">Continue Shopping</a><a href="information.html">Checkout</a></div>
-              </div>
-            </div>
-          </div>
+    <section class="pt-4"> 
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="current"> <a href="./index.html">Home</a></li>
+          <li>Categories</li>
+        </ul>
+      </div>
+    </section>
+    <section class="py-4">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__header__headding">Main category </h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 pt-3 g-3">
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
         </div>
       </div>
     </section>
-    <!-- end cart -->
-    <!-- Start footer-->
+    <section class="py-4">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__header__headding">Main category </h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 pt-3 g-3">
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__header__headding">Main category </h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 pt-3 g-3">
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__header__headding">Main category </h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 pt-3 g-3">
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__header__headding">Main category </h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 pt-3 g-3">
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__header__headding">Main category </h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 pt-3 g-3">
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__header__headding">Main category </h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 pt-3 g-3">
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+          <div class="col"> <a class="categories__card page" href="./single-category.html">
+              <h6>sub category</h6><img src="./images/categories/category1.webp"></a></div>
+        </div>
+      </div>
+    </section>
     <footer class="footer pt-4"> 
       <div class="container"> 
         <div class="footer__top">
@@ -465,8 +442,6 @@
         </div>
       </div>
     </footer>
-    <!-- End footer-->
-    <!-- Start Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script src="./js/navgation.js"></script>
